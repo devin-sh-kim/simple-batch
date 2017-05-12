@@ -15,4 +15,16 @@
 			and name like '%${name}%'
 		</if>		
 	</select>
+	
+	<insert id="insert" parameterType="SimpleVO">
+		insert into 
+			simple(
+				name, 
+				email
+			) 
+			values(
+				#{name}, 
+				#{email}
+			)
+	</insert>
 </mapper>
