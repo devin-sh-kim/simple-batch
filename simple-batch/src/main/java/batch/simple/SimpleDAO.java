@@ -34,13 +34,13 @@ public class SimpleDAO {
 
 	public int insert(SimpleVO vo) {
 		int i = 0;
-		SqlSession session = sqlSessionFactory.openSession();
+		SqlSession session = sqlSessionFactory.openSession(true);
 		try {
 
 			i = session.insert("batch.simple.SimpleDAO.insert", vo);
 			
 			// commit
-			session.commit();
+//			session.commit();
 		}
 		finally {
 		  session.close();
